@@ -23,7 +23,7 @@ jobs:
             export TAG=0.2.<< pipeline.number >>
             # export IMAGE_NAME=$CIRCLE_PROJECT_REPONAME
             docker build -t nodejswebapp -t ioana11023/nodejswebapp:latest .
-            echo $DOCKER_PASSWORD | docker login -u ioana11023 --password-stdin
+            echo $DOCKER_PASSWORD | docker login -u capostu3 --password-stdin
             docker push ioana11023/nodejswebapp:latest
 
 workflows:
