@@ -8,20 +8,17 @@ jobs:
       - run:
           name: Install npm dependencies
           command: |
-            npm install --save
+            npm install
   build_docker_image:
      docker:
        - image: circleci/node:12
      steps:
-      - checkout
       - checkout
       - setup_remote_docker:
           docker_layer_caching: false
       - run:
           name: Build Docker image
           command: |
-            export TAG=0.2.<< pipeline.number >>
-            # export IMAGE_NAME=$CIRCLE_PROJECT_REPONAME
             docker build -t nodejswebapp -t capostu3/nodejswebapp:latest .
             echo $DOCKER_PASSWORD | docker login -u capostu3 --password-stdin
             docker push capostu3/nodejswebapp:latest
