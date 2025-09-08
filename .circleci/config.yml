@@ -29,7 +29,7 @@ jobs:
 workflows:
   build_test:
     jobs:
-      - builc_tests
+      - build_test
       - build_docker_image
 
 
