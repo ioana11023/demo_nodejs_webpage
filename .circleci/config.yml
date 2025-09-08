@@ -24,7 +24,7 @@ jobs:
             # export IMAGE_NAME=$CIRCLE_PROJECT_REPONAME
             docker build -t nodejswebapp -t capostu3/nodejswebapp:latest .
             echo $DOCKER_PASSWORD | docker login -u capostu3 --password-stdin
-            docker push ioana11023/nodejswebapp:latest
+            docker push capostu3/nodejswebapp:latest
 
 workflows:
   build_test:
